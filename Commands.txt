@@ -1,0 +1,42 @@
+git clone https://github.com/NubeEra-Samples/K8S-AdvDeployment.git
+
+cd K8S-AdvDeployment
+
+ls
+
+kubectl create -f nginx-dep.yaml
+
+kubectl get deployments
+
+kubectl describe deploy
+
+kubectl get pods   or kubectl get po
+
+kubectl scale deployments/nginx-deployment --replicas=4
+
+kubectl get deployments
+
+kubectl scale deployments/nginx-deployment --replicas=2
+
+
+Rolling Update Strategy:
+--------------------------------
+kubectl set image deployments/nginx-deployment nginx=nginx:1.9.1
+
+kubectl describe pods
+
+kubectl rollout status deployments/nginx-deployment
+
+kubectl rollout undo deployments/nginx-deployment
+
+kubectl describe deployments | grep Strategy
+
+kubectl delete deployment nginx-deployment
+
+
+
+
+
+
+
+
